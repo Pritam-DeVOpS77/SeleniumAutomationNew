@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -19,17 +18,33 @@ import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+
+
+import extentReport.ExtentReportGeneratorUtil;
 
 public class BaseUtil {
 	
-	WebDriver baseDriver;
+	public WebDriver baseDriver;
+	public ExtentReports reports;
+	public ExtentTest test; 
 	File file;
 	FileInputStream fis;
 	Properties prop;
 	String propFilePath ="C:\\Users\\prita\\eclipse-workspace\\MavenProjectForAutomation\\src\\main\\java\\dataFile\\newData.properties";
 	String ScrFilePath ="C:\\Users\\prita\\eclipse-workspace\\MavenProjectForAutomation\\screenShot\\";
 	Actions act; 
+	
+	@BeforeMethod 
+	//BeforeMethod runs one in entire session before test Method
+	public void init() {
+		System.out.println("Before Method executed !");
+		reports = ExtentReportGeneratorUtil.getReports();
+		test = reports.createTest("LoginTestWithValidTestData");          
+	}
 	
 	@BeforeTest
 	public void beforeTest() throws IOException {

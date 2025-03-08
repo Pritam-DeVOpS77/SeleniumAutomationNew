@@ -5,8 +5,10 @@
     <classes>
       <class name="com.app.auto.LoginTestCaseWithBase">
         <methods>
-          <include name="login" invocation-numbers="1"/>
+          <include name="init"/>
+          <include name="login"/>
           <include name="beforeTest"/>
+          <include name="closeDrivers"/>
         </methods>
       </class> <!-- com.app.auto.LoginTestCaseWithBase -->
     </classes>

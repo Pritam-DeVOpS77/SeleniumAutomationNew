@@ -1,9 +1,12 @@
 package com.app.auto;
 
 import java.io.IOException;
-
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import com.ReuseableBase.BaseUtil;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 
 import excelUtility.ReadDataFromExcelFile;
 
@@ -25,5 +28,13 @@ public class LoginTestCaseWithBase extends BaseUtil {
 		takingScreenShot();
 		scrollAction();	
 		moveToElement("visitElement_id");
+	}
+	
+	@AfterMethod
+	public void closeDrivers() {
+		System.out.println("After Method");
+		baseDriver.close();
+		test.log(Status.PASS, MarkupHelper.createLabel("Sauce Lab : Pass", ExtentColor.CYAN));
+		reports.flush();
 	}
 }
