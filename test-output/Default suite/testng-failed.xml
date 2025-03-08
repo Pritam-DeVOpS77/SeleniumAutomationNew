@@ -5,7 +5,7 @@
     <classes>
       <class name="com.app.auto.LoginTestCaseWithBase">
         <methods>
-          <include name="login"/>
+          <include name="login" invocation-numbers="1"/>
           <include name="beforeTest"/>
         </methods>
       </class> <!-- com.app.auto.LoginTestCaseWithBase -->
