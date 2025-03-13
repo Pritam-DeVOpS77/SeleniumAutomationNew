@@ -21,8 +21,8 @@ public class HandlingReadingTextFromElement {
 		System.out.println("Element getCssValue 2 "+ driver.findElement(By.xpath("//*[@id=\"post-body-7702345506409447484\"]/div/input[2]"))
 		.getCssValue("value"));
 		
-		System.out.println("Element getAttribute 2 "+ driver.findElement(By.xpath("//*[@id=\"post-body-7702345506409447484\"]/div/input[2]"))
-		.getAttribute("value"));
+		//System.out.println("Element getAttribute 2 "+ driver.findElement(By.xpath("//*[@id=\"post-body-7702345506409447484\"]/div/input[2]"))
+		//.getAttribute("value"));
 		
 		System.out.println("Element getDomAttribute 2 "+ driver.findElement(By.xpath("//*[@id=\"post-body-7702345506409447484\"]/div/input[2]"))
 		.getDomAttribute("value"));
